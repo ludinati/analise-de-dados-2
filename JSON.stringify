@@ -1,0 +1,7 @@
+function doGet(e) {
+    var sheet SpreadsheetApp.getActiveSheet()
+    var data = sheet.getDataRange()
+    var jsonData = JSON.stringify(data)
+    return ContentService.createTextOutput(jsonData)
+    return ContentService.createTextOutput(jsonData).setMimeType(ContentService.MimeType.JSON)
+}
